@@ -5,10 +5,7 @@ import graphql.ExecutionResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -16,10 +13,11 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin(origins = "*")
+@RequestMapping("/api/v1/swapi")
 public class GraphQLController {
     private final GraphQLProvider provider;
 
-    @RequestMapping(value = "/data")
+    @PostMapping
     public String getData(@RequestBody String query) {
         log.info("data: {}",query);
         ExecutionResult execute = provider.initiateGraphQL().execute(query);
