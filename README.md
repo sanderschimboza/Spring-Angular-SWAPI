@@ -33,4 +33,4 @@ ng add @ng-bootstrap/ng-bootstrap
 
 4 Run ng serve
 
-NB: Angular 12 and Java 11 with Spring boot where the technologies used to built the application.
+NB: Angular 12 and Java 11 with Spring boot were the technologies used to built the application.
